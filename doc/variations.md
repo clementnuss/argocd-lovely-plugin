@@ -1,6 +1,6 @@
 # Lovely variations
 
-All lovely plugin containers have helm, kustomize, helmfile, bash, git, and yq built in to them.
+All lovely plugin containers have helm, kustomize, helmfile, bash, git, ytt, and yq built in to them.
 
 | Container name | Versioned | Contains |
 |----------------|-----------|----------|

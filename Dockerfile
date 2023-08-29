@@ -2,6 +2,9 @@ FROM golang:1.21.0 as builder
  # https://github.com/mikefarah/yq/releases
  # renovate: datasource=github-releases depName=mikefarah/yq
 ARG YQ_VERSION=v4.35.1
+ # https://github.com/carvel-dev/ytt/releases
+ # renovate: datasource=github-releases depName=carvel-dev/ytt
+ARG YTT_VERSION=v0.45.4
  # https://github.com/kubernetes-sigs/kustomize/releases
  # renovate: datasource=github-releases depName=kubernetes-sigs/kustomize
 ARG KUSTOMIZE_VERSION=v5.0.3
@@ -34,6 +37,7 @@ ENV LOVELY_PLUGINS=
 ENV LOVELY_PREPROCESSORS=
 ENV LOVELY_SIDECAR=true
 COPY --from=builder /usr/local/bin/yq /usr/local/bin/yq
+COPY --from=builder /usr/local/bin/ytt /usr/local/bin/ytt
 COPY --from=builder /usr/local/bin/helm /usr/local/bin/helm
 COPY --from=builder /usr/local/bin/helmfile /usr/local/bin/helmfile
 COPY --from=builder /usr/local/bin/kustomize /usr/local/bin/kustomize

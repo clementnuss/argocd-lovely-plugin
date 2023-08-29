@@ -21,6 +21,9 @@ curl -SL https://github.com/kubernetes-sigs/kustomize/releases/download/kustomiz
 # Install yq
 curl -L -s "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_${ARCH}" -o /usr/local/bin/yq && chmod +x /usr/local/bin/yq
 
+# Install ytt
+curl -L -s "https://github.com/carvel-dev/releases/download/${YTT_VERSION}/ytt-linux-${ARCH}" -o /usr/local/bin/ytt && chmod +x /usr/local/bin/ytt
+
 # Install Helmfile
 curl -SL https://github.com/helmfile/helmfile/releases/download/${HELMFILE_VERSION}/helmfile_${HELMFILE_VERSION:1}_linux_${ARCH}.tar.gz | tar -xzC /usr/local/bin
 
